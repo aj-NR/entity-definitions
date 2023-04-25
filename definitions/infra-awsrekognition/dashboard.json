@@ -53,7 +53,7 @@
             "nrqlQueries": [
               {
                 "accountId": 0,
-                "query": "FROM Metric SELECT count(aws.rekognition.UserErrorCount) as `User Error Count`, count(aws.rekognition.ServerErrorCount) as `Server Error Count` timeseries"
+                "query": "FROM Metric SELECT count(aws.rekognition.UserErrorCount) as `User Error Count`, count(aws.rekognition.ServerErrorCount) as `Server Error Count` TIMESERIES"
               }
             ],
             "platformOptions": {
@@ -82,7 +82,7 @@
             "nrqlQueries": [
               {
                 "accountId": 0,
-                "query": "FROM Metric Select average(aws.rekognition.ResponseTime) as ResponseTime where aws.Namespace like '%Rekognition%' TIMESERIES\n"
+                "query": "FROM Metric Select average(aws.rekognition.ResponseTime) as `ResponseTime` TIMESERIES"
               }
             ],
             "platformOptions": {
@@ -111,7 +111,7 @@
             "nrqlQueries": [
               {
                 "accountId": 0,
-                "query": "FROM Metric select count(aws.rekognition.MaxInferenceUnits) as `MaxInferenceUnits`, count(aws.rekognition.MinInferenceUnits) as `MinInferenceUnits`, count(aws.rekognition.MinInferenceUnits) as `MinInferenceUnits`, count(aws.rekognition.DesiredInferenceUnits) as DesiredInferenceUnits, count(aws.rekognition.InServiceInferenceUnits) as `InServiceInferenceUnits` where aws.Namespace like '%Rekognition%' facet aws.rekognition.ProjectName"
+                "query": "FROM Metric select count(aws.rekognition.MaxInferenceUnits) as `MaxInferenceUnits`, count(aws.rekognition.MinInferenceUnits) as `MinInferenceUnits`, count(aws.rekognition.MinInferenceUnits) as `MinInferenceUnits`, count(aws.rekognition.DesiredInferenceUnits) as DesiredInferenceUnits, count(aws.rekognition.InServiceInferenceUnits) as `InServiceInferenceUnits` facet aws.rekognition.ProjectName"
               }
             ],
             "platformOptions": {
