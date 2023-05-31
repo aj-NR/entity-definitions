@@ -10,15 +10,15 @@ region:
     key: aws.awsRegion
 requests:
   goldenMetric: requests
-  title: Total Request count
+  title: Total Request Count
   unit: COUNT
 runtimeSystemErrors:
   goldenMetric: runtimeSystemErrors
-  title: Runtime System Errors count
+  title: RuntimeSystemErrors count
   unit: COUNT
 runtimeUserErrors:
   goldenMetric: runtimeUserErrors
-  title: Runtime User Errors count
+  title: RuntimeUserErrors count
   unit: COUNT
 runtimeThrottledEvents:
   goldenMetric: runtimeThrottledEvents
