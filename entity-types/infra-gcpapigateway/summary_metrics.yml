@@ -1,0 +1,32 @@
+gcp.projectId:
+  title: Project ID
+  unit: STRING
+  tag:
+    key: gcp.projectId
+RequestCount:
+  title: Request Count
+  unit: COUNT
+  queries:
+    gcp:
+      select: sum(gcp.apigateway.proxy.request_count)
+      from: Metric
+      eventId: entity.guid
+      eventName: entity.name
+ErrorRate:
+  title: Error Rate
+  unit: PERCENTAGE
+  queries:
+    gcp:
+      select: 100 * filter(sum(gcp.apigateway.proxy.request_count), WHERE metric.response_code_class IN ('4xx', '5xx')) / sum(gcp.apigateway.proxy.request_count)
+      from: Metric
+      eventId: entity.guid
+      eventName: entity.name
+Latency:
+  title: Request Latency
+  unit: MILLISECONDS
+  queries:
+    gcp:
+      select: average(gcp.apigateway.proxy.request_latencies)
+      from: Metric
+      eventId: entity.guid
+      eventName: entity.name
